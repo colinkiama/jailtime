@@ -1,0 +1,18 @@
+#!/bin/sh
+
+EXTENSION_ASSETS_DIR=./assets
+SOURCE_DIR=./src
+
+# Copy source files
+for source_item in $SOURCE_DIR/*
+do
+	echo "Copying $source_item to build"
+	cp -r $source_item ./build/
+done
+
+# Copy web extension files
+for ext_file in $EXTENSION_ASSETS_DIR/*
+do
+	echo "Copying $ext_file to build"
+	cp -r $ext_file ./build/
+done
