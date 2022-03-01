@@ -4,8 +4,35 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>jailtime popup</title>
+	<link rel="stylesheet" href="/css/global.css">
+	<link rel="stylesheet" href="/css/popup.css">
 </head>
-<body>
-<h1>Hey it's jail time!</h1>
+<body class="popup">
+	<header>
+		<button data-popup-action="back" class="icon-button">(back icon)</button>
+		<p>yolomail.net</p>
+		<button data-popup-action="settings" class="icon-button">(settings icon)</button>
+	</header>
+	<main>
+		<svg>
+			<title>jailtime logo</title>
+		</svg>
+
+		<div class="site-info">
+			<span>yolomail.net</span>
+			<div class="block-status">
+				<span class="indicator"></span>
+				Blocked
+			</div>
+		</div>
+
+		<div class="actions">
+			<button data-popup-action="block">
+				<svg>
+					<title>Block</title>
+				</svg>
+			</button>
+		</div>
+	</main>
 </body>
 </html>

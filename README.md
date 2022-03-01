@@ -19,5 +19,3 @@ That will give permission to all scripts in the `task` directory to run.
 ### Caveats on Windows operating systems
 
 These scripts are shell scripts (`sh`) however, some of the commands may not be compatible with windows. You may need to install a bash terminal on windows in order to work with these scripts on there.
-
-

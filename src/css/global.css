@@ -1,0 +1,9 @@
+@font-face {
+	font-family: "ReadexPro";
+	src: url("/assets/fonts/ReadexProVariable.ttf") format('truetype');
+	font-weight: 200 700;
+}
+
+body {
+	font-family: "ReadexPro";
+}
