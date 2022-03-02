@@ -4,6 +4,44 @@
 	font-weight: 200 700;
 }
 
+:root {
+	/* Color Palette */
+	--murky-grey: hsla(24, 5%, 19%, 1);
+	--uniform-blue: hsla(241, 68%, 45%, 1);
+	--siren-red: hsla(2, 82%, 47%, 1);
+	--siren-red-in-dark: hsla(2, 82%, 64%, 1);
+	--inactive-siren-red: hsla(360, 82%, 77%, 1);
+	--foggy-grey: hsla(0, 0%, 68%, 1);
+	--dirty-grey: hsla(0, 0%, 49%, 1);
+	--light-bg-color: hsla(0, 0%, 99%, 1);
+	--dark-bg-color: var(--murky-grey);
+
+	/* Gradient Colors */
+	--siren-red-gradient: linear-gradient(90deg, hsla(22, 82%, 47%, 1) 18%, hsla(360, 82%, 47%, 1) 82%);
+	--uniform-blue-gradient: linear-gradient(90deg, hsla(198, 61%, 42%, 1) 17%, hsla(230, 68%, 45%, 1) 82%);
+
+	/* Base Colors */
+	--foreground-color: var(--murky-grey);
+	--background-color: var(--light-bg-color);
+
+	/* Base typography */
+	--base-font-size: 16px;
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-bold: 700;
+}
+
+/* Dark theme properites */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-color: white;
+		--background-color: var(--dark-bg-color);
+	}
+}
+
 body {
 	font-family: "ReadexPro";
+	color: var(--foreground-color);
+	background-color: var(--background-color);
+	font-size: var(--base-font-size);
 }
