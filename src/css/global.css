@@ -45,3 +45,24 @@ body {
 	background-color: var(--background-color);
 	font-size: var(--base-font-size);
 }
+
+button.primary {
+	transition: background-color 0.3s ease-out;
+	display: inline-flex;
+	background-color: var(--siren-red);
+	font-family: inherit;
+	color: white;
+	padding: 0.5rem 2rem;
+	border-radius: 1.25rem;
+	border: 0;
+	font-variation-settings: 'wght' var(--font-weight-medium);
+}
+
+button.primary:hover {
+	background-color: hsl(1.8, 81.7%, 57.1%);
+}
+
+button.primary:active {
+	background-color: hsl(1.8, 81.7%, 67.1%);
+
+}
