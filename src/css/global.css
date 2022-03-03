@@ -39,6 +39,7 @@ body {
 	font-size: var(--base-font-size);
 }
 
+/* Components */
 button.primary {
 	transition: background-color 0.3s ease-out;
 	display: inline-flex;
@@ -89,6 +90,33 @@ button.secondary:disabled {
 	color: var(--inactive-siren-red);
 }
 
+.indicator {
+	width: 1rem;
+	height: 1rem;
+	display: inline-block;
+	border-radius: 100%;
+	background-color: gray;
+	border: 0.125rem solid white;
+	box-sizing: border-box;
+}
+
+.block-status {
+	display: flex;
+	align-items: center;
+}
+
+.block-status .indicator {
+	margin-right: 0.5rem;
+}
+
+.block-status.blocked .indicator {
+	background-color: var(--siren-red);
+}
+
+.block-status.not-blocked .indicator {
+	background-color: var(--uniform-blue);
+}
+
 /* Dark theme styles */
 @media (prefers-color-scheme: dark) {
 	:root {
@@ -106,6 +134,5 @@ button.secondary:disabled {
 
 	button.secondary:active {
 		color: hsl(1.8, 81.7%, 77.1%);
-
-	}
+	}	
 }

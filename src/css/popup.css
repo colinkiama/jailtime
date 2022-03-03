@@ -22,7 +22,7 @@
 
 .popup .site-info {
 	border-radius: 0.75rem;
-	background: var(--uniform-blue-gradient, blue);
+	background: var(--uniform-blue-gradient);
 	color: white;
 	padding: 3rem 0;
 	margin: 2.5rem 0;
