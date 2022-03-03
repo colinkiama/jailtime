@@ -31,13 +31,6 @@
 	--font-weight-bold: 700;
 }
 
-/* Dark theme properites */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--foreground-color: white;
-		--background-color: var(--dark-bg-color);
-	}
-}
 
 body {
 	font-family: "ReadexPro";
@@ -49,6 +42,7 @@ body {
 button.primary {
 	transition: background-color 0.3s ease-out;
 	display: inline-flex;
+	align-items: center;
 	background-color: var(--siren-red);
 	font-family: inherit;
 	color: white;
@@ -65,4 +59,53 @@ button.primary:hover {
 button.primary:active {
 	background-color: hsl(1.8, 81.7%, 67.1%);
 
+}
+
+button.primary:disabled {
+	background-color: var(--inactive-siren-red);
+}
+
+button.secondary {
+	transition: color 0.3s ease-out;
+	display: inline-flex;
+	background: none;
+	align-items: center;
+	font-family: inherit;
+	color: var(--siren-red);
+	border: 0;
+	font-variation-settings: 'wght' var(--font-weight-medium);
+}
+
+button.secondary:hover {
+	color: hsl(1.8, 81.7%, 57.1%);
+}
+
+button.secondary:active {
+	color: hsl(1.8, 81.7%, 67.1%);
+
+}
+
+button.secondary:disabled {
+	color: var(--inactive-siren-red);
+}
+
+/* Dark theme styles */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--foreground-color: white;
+		--background-color: var(--dark-bg-color);
+	}
+
+	button.secondary {
+		color: var(--siren-red-in-dark);
+	}
+
+	button.secondary:hover {
+		color: hsl(1.8, 81.7%, 67.1%);
+	}
+
+	button.secondary:active {
+		color: hsl(1.8, 81.7%, 77.1%);
+
+	}
 }
