@@ -40,17 +40,21 @@ body {
 }
 
 /* Components */
-button.primary {
-	transition: background-color 0.3s ease-out;
+button.primary,
+button.secondary {
 	display: inline-flex;
 	align-items: center;
-	background-color: var(--siren-red);
 	font-family: inherit;
-	color: white;
-	padding: 0.5rem 2rem;
-	border-radius: 1.25rem;
 	border: 0;
 	font-variation-settings: 'wght' var(--font-weight-medium);
+}
+
+button.primary {
+	transition: background-color 0.3s ease-out;
+	background-color: var(--siren-red);
+	color: white;
+	padding: 0.5rem 2rem;
+	border-radius: 1.25rem;	
 }
 
 button.primary:hover {
@@ -68,13 +72,8 @@ button.primary:disabled {
 
 button.secondary {
 	transition: color 0.3s ease-out;
-	display: inline-flex;
 	background: none;
-	align-items: center;
-	font-family: inherit;
 	color: var(--siren-red);
-	border: 0;
-	font-variation-settings: 'wght' var(--font-weight-medium);
 }
 
 button.secondary:hover {
@@ -83,7 +82,6 @@ button.secondary:hover {
 
 button.secondary:active {
 	color: hsl(1.8, 81.7%, 67.1%);
-
 }
 
 button.secondary:disabled {
@@ -121,7 +119,6 @@ button.secondary:disabled {
 .schedule-status svg {
 	margin-right: 0.75rem;
 }
-
 
 /* Dark theme styles */
 @media (prefers-color-scheme: dark) {
