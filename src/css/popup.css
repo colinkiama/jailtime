@@ -1,8 +1,6 @@
 .popup {
-	display: flex;
-	flex-direction: column;
-	margin: 0;
 	min-width: 380px;
+	min-height: 400px;
 	padding-bottom: 1rem;
 }
 
@@ -69,4 +67,25 @@
 	flex-direction: column;
 	align-items: center;
 	margin: 0 1rem;
+}
+
+.popup[data-popup-view="block"] main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1 1 0%;
+}
+
+.popup[data-popup-view="block"] .actions {
+	align-items: stretch;
+	margin: 0 4rem;
+}
+
+
+.popup[data-popup-view="block"] .actions > * {
+	margin-top: 2rem;
+}
+
+.popup[data-popup-view="block"] .actions > :first-child {
+	margin-top: 0;
 }
