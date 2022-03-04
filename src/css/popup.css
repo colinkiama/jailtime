@@ -1,8 +1,7 @@
 .popup {
 	min-height: unset;
 	width: 380px;
-	height: 400px;
-	padding-bottom: 3rem;
+	height: 440px;
 }
 
 .popup > header {
@@ -77,6 +76,7 @@
 	flex: 1 1 0%;
 	padding-left: 3rem;
 	padding-right: 3rem;
+	padding-bottom: 3rem;
 }
 
 .popup[data-popup-view="block"] main {
