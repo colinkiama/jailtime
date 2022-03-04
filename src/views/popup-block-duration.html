@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>jailtime popup</title>
+	<link rel="stylesheet" href="/css/global.css">
+	<link rel="stylesheet" href="/css/popup.css">
+</head>
+<body class="popup" data-popup-view="block-duration">
+	<header>
+		<button data-popup-action="settings" class="icon-button">c</button>
+		<span>yolomail.net</span>
+	</header>
+	<main>
+		<form name="duration-input" id="duration-input">
+			<span>Block Duration</span>
+
+			<div class="duration-dropdowns">
+				<label class="dropdown">
+					<span>Title</span>
+					<select name="hours">
+						<!-- Generate these with JS. There are way too many options here <-->
+						<option selected>0</option>
+						<option>1</option>
+						<option>2</option>
+					</select>
+				</label>
+
+				<label class="dropdown">
+					<span>Minutes</span>
+					<select name="minutes">
+						<!-- Generate these with JS. There are way too many options here <-->
+						<option>0</option>
+						<option>1</option>
+						<option>2</option>
+						<option selected>30</option>
+					</select>
+				</label>
+
+				<label class="dropdown">
+					<span>Seconds</span>
+					<select name="seconds">
+						<!-- Generate these with JS. There are way too many options here <-->
+						<option selected>0</option>
+						<option>1</option>
+						<option>2</option>
+					</select>
+				</label>
+			</div>
+		</form>
+		<div class="actions">
+			<button form="duration-input" class="primary" data-popup-action="start-temp-block">
+				Start
+			</button>
+		</div>
+	</main>
+</body>
+</html>

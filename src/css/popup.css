@@ -1,7 +1,8 @@
 .popup {
-	min-width: 380px;
-	min-height: 400px;
-	padding-bottom: 1rem;
+	min-height: unset;
+	width: 380px;
+	height: 400px;
+	padding-bottom: 3rem;
 }
 
 .popup > header {
@@ -23,13 +24,13 @@
 	flex: 1 1 0%;
 }
 
-.popup[data-popup-view="block"] > header{
+.popup[data-popup-view] > header{
 	background: var(--siren-red-gradient);
 	justify-content: space-between;
 }
 
-.popup[data-popup-view="block"] > header button {
-	position: fixed;
+.popup[data-popup-view] > header button {
+	position: absolute;
 }
 
 .popup .logo {
@@ -41,8 +42,9 @@
 	border-radius: 0.75rem;
 	background: var(--uniform-blue-gradient);
 	color: white;
-	padding: 3rem 0;
-	margin: 2rem;
+	padding: 3rem 6rem;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -66,21 +68,24 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0 1rem;
 }
 
-.popup[data-popup-view="block"] main {
+.popup main {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	flex: 1 1 0%;
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+
+.popup[data-popup-view="block"] main {
+	padding-top: 3rem;
 }
 
 .popup[data-popup-view="block"] .actions {
 	align-items: stretch;
-	margin: 0 4rem;
 }
-
 
 .popup[data-popup-view="block"] .actions > * {
 	margin-top: 2rem;
@@ -88,4 +93,35 @@
 
 .popup[data-popup-view="block"] .actions > :first-child {
 	margin-top: 0;
+}
+
+.popup[data-popup-view="block-duration"] main {
+	padding-top: 2rem;
+}
+
+.popup[data-popup-view="block-duration"] form > span:first-child {
+	display: block;
+	text-align: center;
+	font-variation-settings: 'wght' var(--font-weight-medium);
+	font-size: 1.5rem;
+}
+
+.popup[data-popup-view="block-duration"] .duration-dropdowns {
+	display: flex;
+	margin-top: 2rem;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup[data-popup-view="block-duration"] .duration-dropdowns > * {
+	width: 4.5rem;
+	margin-right: 0.75rem;
+}
+
+.popup[data-popup-view="block-duration"] .duration-dropdowns > :last-child {
+	margin-right: 0;
+}
+
+.popup[data-popup-view="block-duration"] .actions {
+	margin-top: 3rem;
 }
