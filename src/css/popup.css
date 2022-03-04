@@ -1,18 +1,37 @@
 .popup {
 	display: flex;
 	flex-direction: column;
-	padding: 1rem;
 	margin: 0;
+	min-width: 380px;
+	padding-bottom: 1rem;
 }
 
 .popup > header {
 	display: flex;
+	padding: 1.25rem 1rem;
+	align-items: center;
+	justify-content: flex-end;
+	color: white;
+}
 
+.popup > header button {
+	width: 1.5rem;
+	height: 1.5rem;
+	flex: 0 0 1.5rem;
 }
 
 .popup > header span {
-	flex: 1 1 0%;
 	text-align: center;
+	flex: 1 1 0%;
+}
+
+.popup[data-popup-view="block"] > header{
+	background: var(--siren-red-gradient);
+	justify-content: space-between;
+}
+
+.popup[data-popup-view="block"] > header button {
+	position: fixed;
 }
 
 .popup .logo {
@@ -25,15 +44,29 @@
 	background: var(--uniform-blue-gradient);
 	color: white;
 	padding: 3rem 0;
-	margin: 2.5rem 0;
+	margin: 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	filter: drop-shadow(0px 0px 8px hsla(0, 0%, 0%, 0.25));
 }
 
+.popup .site-info > * {
+	margin-bottom: 0.75rem;
+}
+
+.popup .site-info > *:last-child {
+	margin-bottom: 0;
+}
+
+.popup .site-info .site-name {
+	font-size: 1.25rem;
+	font-variation-settings: 'wght' var(--font-weight-medium);
+}
+
 .popup .actions {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 0 1rem;
 }

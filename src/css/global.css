@@ -100,7 +100,8 @@ button.secondary:disabled {
 	box-sizing: border-box;
 }
 
-.block-status {
+.block-status,
+.schedule-status {
 	display: flex;
 	align-items: center;
 }
@@ -116,6 +117,11 @@ button.secondary:disabled {
 .block-status.not-blocked .indicator {
 	background-color: var(--uniform-blue);
 }
+
+.schedule-status svg {
+	margin-right: 0.75rem;
+}
+
 
 /* Dark theme styles */
 @media (prefers-color-scheme: dark) {
