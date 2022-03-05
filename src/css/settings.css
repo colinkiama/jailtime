@@ -1,6 +1,6 @@
+/* Flexbox grid technique setup */
 .settings {
 	--gutter: 2.5rem;
-	--grid-width: 100%;
 	--max-grid-width: 1640px;
 	--grid-columns: 12;
 	--gaps: 0;
@@ -8,6 +8,8 @@
  
 	display: flex;
 	flex-direction: column;
+	padding-left: 32px;
+	padding-right: 32px;
 }
 
 .settings header {
@@ -15,15 +17,11 @@
 }
 
 .settings main {
+	flex: 1 1 0%;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: var(--max-grid-width);
 	width: 100%;
-}
-
-.settings main nav {
-	position: fixed;
-	display: none;
 }
 
 .settings .grid {
@@ -32,6 +30,20 @@
 	display: flex;
 	flex-wrap: wrap;
 }
+
+.settings main nav {
+	position: fixed;
+	display: none;
+}
+
+.settings main .main-content {
+	background: blue;
+	flex: none;
+	--container-columns: 12;
+	width: calc( ( 100% / var(--grid-columns) * var(--container-columns) ) - var(--gutter));
+	margin-left: calc(var(--gutter));
+}
+
 
 .settings footer {
 	padding-bottom: 2rem;
@@ -44,19 +56,20 @@
 		display: block;
 		margin-left: calc(var(--gutter));
 		--container-columns: 2;
-		width: calc( ( var(--grid-width) / var(--grid-columns) * var(--container-columns) ) - var(--gutter) );
+		width: calc( ( 100% / var(--grid-columns) * var(--container-columns) ) - var(--gutter) );
 	}
 
 	.settings main .main-content {
 		background: blue;
+		flex: none;
 		--container-columns: 10;
-		width: calc( ( var(--grid-width) / var(--grid-columns) * var(--container-columns) ) - var(--gutter));
+		width: calc( ( 100% / var(--grid-columns) * var(--container-columns) ) - var(--gutter));
 		margin-left: calc(var(--gutter));
 	}
 }
 
-/*@media (min-width: 1920px) {
-	.settings {
-		--grid-width: var(--max-grid-width);
+@media (min-width: 1920px) {
+	.settings main {
+		padding: 0;	
 	}
-}*/
+}

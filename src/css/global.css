@@ -31,6 +31,19 @@
 	--font-weight-bold: 700;
 }
 
+/** 
+ * Box sizing reset. Your flexbox grids will not work well with padding 
+ * without it 
+**/ 
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
 
 body {
 	font-family: "ReadexPro";
@@ -95,7 +108,7 @@ button.secondary:active {
 button.secondary:disabled {
 	color: var(--inactive-siren-red);
 }
-	
+
 .indicator {
 	width: 1rem;
 	height: 1rem;
@@ -112,7 +125,7 @@ button.secondary:disabled {
 	align-items: center;
 	white-space: nowrap;
 }
-	
+
 .block-status .indicator {
 	margin-right: 0.5rem;
 }
