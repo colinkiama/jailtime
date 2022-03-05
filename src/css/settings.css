@@ -27,11 +27,10 @@
 }
 
 .settings .grid {
-	flex: 1 1 0%;
 	width: calc(100% + var(--gutter));
 	margin-left: calc(var(--gutter) * -1);
 	display: flex;
-	/*flex-wrap: wrap;*/
+	flex-wrap: wrap;
 }
 
 .settings footer {
@@ -45,19 +44,19 @@
 		display: block;
 		margin-left: calc(var(--gutter));
 		--container-columns: 2;
-		width: calc( ( var(--grid-width) / var(--grid-columns) ) * var(--container-columns));
+		width: calc( ( var(--grid-width) / var(--grid-columns) * var(--container-columns) ) - var(--gutter) );
 	}
 
 	.settings main .main-content {
 		background: blue;
 		--container-columns: 10;
-		width: calc( ( var(--grid-width) / var(--grid-columns) ) * var(--container-columns));
+		width: calc( ( var(--grid-width) / var(--grid-columns) * var(--container-columns) ) - var(--gutter));
 		margin-left: calc(var(--gutter));
 	}
 }
 
-@media (min-width: 1920px) {
+/*@media (min-width: 1920px) {
 	.settings {
 		--grid-width: var(--max-grid-width);
 	}
-}
+}*/
