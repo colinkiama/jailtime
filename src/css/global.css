@@ -58,6 +58,10 @@ body {
 	flex-direction: column;
 }
 
+ul {
+	list-style: none;
+	padding-left: 0;
+}
 /* Components */
 button.primary,
 button.secondary {

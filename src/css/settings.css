@@ -2,18 +2,9 @@
 .settings {
 	--gutter: 2.5rem;
 	--max-grid-width: 1640px;
-	--grid-columns: 12;
-	--gaps: 0;
-	--container-columns: 12;
- 
 	display: flex;
 	flex-direction: column;
-	padding-left: 32px;
-	padding-right: 32px;
-}
-
-.settings header {
-	padding-top: 2rem;
+	padding-top: 4rem;
 }
 
 .settings main {
@@ -22,13 +13,22 @@
 	margin-right: auto;
 	max-width: var(--max-grid-width);
 	width: 100%;
+	padding-left: 2rem;
+	padding-right: 2rem;
 }
 
-.settings .grid {
-	width: calc(100% + var(--gutter));
-	margin-left: calc(var(--gutter) * -1);
+.settings main .columns {
+	width: 100%;
 	display: flex;
-	flex-wrap: wrap;
+}
+
+.settings main header,
+.settings main .main-content {
+	width: 100%
+}
+
+.settings main header {
+	background: green;
 }
 
 .settings main nav {
@@ -38,37 +38,32 @@
 
 .settings main .main-content {
 	background: blue;
-	flex: none;
-	--container-columns: 12;
-	width: calc( ( 100% / var(--grid-columns) * var(--container-columns) ) - var(--gutter));
-	margin-left: calc(var(--gutter));
+	overflow-y: auto;
 }
-
 
 .settings footer {
 	padding-bottom: 2rem;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 1000px) {
+	.settings main {
+		padding-left: 8.75rem;
+		padding-right: 8.75rem;
+		padding-top: 6.25rem;
+	}
 	.settings main nav {
 		background: red;
 		position: static;
 		display: block;
-		margin-left: calc(var(--gutter));
-		--container-columns: 2;
-		width: calc( ( 100% / var(--grid-columns) * var(--container-columns) ) - var(--gutter) );
+		width: 18.75rem;
 	}
 
 	.settings main .main-content {
-		background: blue;
-		flex: none;
-		--container-columns: 10;
-		width: calc( ( 100% / var(--grid-columns) * var(--container-columns) ) - var(--gutter));
-		margin-left: calc(var(--gutter));
-	}
+		margin-left: var(--gutter);
+		width: 55%;
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1640px) {
 	.settings main {
 		padding: 0;	
 	}
