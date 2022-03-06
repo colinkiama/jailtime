@@ -31,10 +31,6 @@
 	--font-weight-bold: 700;
 }
 
-/** 
- * Box sizing reset. Your flexbox grids will not work well with padding 
- * without it 
-**/ 
 html {
 	box-sizing: border-box;
 }
