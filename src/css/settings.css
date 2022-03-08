@@ -25,18 +25,27 @@
 .settings main .main-content {
 	width: 100%
 }
-
-.settings main header {
-	background: green;
-}
-
+	
 .settings main nav {
 	position: fixed;
 	display: none;
 }
 
+.settings main nav a {
+	transition: color 0.3s ease-out;
+	color: var(--foggy-grey);
+	text-decoration: none;
+}
+
+.settings main nav a:hover {
+	color: hsla(0, 0%, 28%, 1);
+}
+
+.settings main nav a:active {
+	color: hsla(0, 0%, 10%, 1);
+}
+
 .settings main .main-content {
-	background: blue;
 	overflow-y: auto;
 }
 
@@ -51,7 +60,6 @@
 		padding-top: 6.25rem;
 	}
 	.settings main nav {
-		background: red;
 		position: static;
 		display: block;
 		width: 18.75rem;
@@ -65,5 +73,23 @@
 @media (min-width: 1640px) {
 	.settings main {
 		padding: 0;	
+	}
+
+}
+
+/* Dark color scheme styles */
+@media (prefers-color-scheme: dark) {
+	.settings main nav a {
+		transition: color 0.3s ease-out;
+		color: var(--dirty-grey);
+		text-decoration: none;
+	}
+
+	.settings main nav a:hover {
+		color: hsla(0, 0%, 79%, 1);
+	}
+
+	.settings main nav a:active {
+		color: hsla(0, 0%, 89%, 1)
 	}
 }
