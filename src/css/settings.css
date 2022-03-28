@@ -7,7 +7,8 @@
 }
 
 .settings > header,
-.settings main {
+.settings main,
+.settings footer {
 	padding-left: 2rem;
 	padding-right: 2rem;
 
@@ -59,22 +60,51 @@
 	color: hsla(0, 0%, 10%, 1);
 }
 
-.settings main section table {
-	width: 100%;
+.settings main .main-content {
+	overflow-y: auto;
 }
 
-/*.settings main .main-content {
-	overflow-y: auto;
-}*/
+.settings main section table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/* Update with to match "icon-only button" width when implemented. */
+.settings table .actions {
+	width: 4rem;
+}
+
+.settings table td {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+
+.settings table td:first-child {
+	padding-left: 1.25rem;
+}
+
+.settings table td:last-child {
+	padding-right: 1.25rem;
+}
+
+.settings table tr {
+	border-bottom: solid 1px var(--foggy-grey);
+}
 
 .settings footer {
+	padding-top: 2rem;
 	padding-bottom: 2rem;
+	text-align: left;
 }
 
 @media (min-width: 1000px) {
-	.settings main {
+	.settings main,
+	.settings footer {
 		padding-left: 8.75rem;
 		padding-right: 8.75rem;
+	}
+
+	.settings main {
 		padding-top: 6.25rem;
 	}
 
@@ -94,6 +124,8 @@
 	.settings main .main-content {
 		margin-left: var(--gutter);
 		width: 55%;
+	}
+
 }
 
 @media (min-width: 1640px) {
