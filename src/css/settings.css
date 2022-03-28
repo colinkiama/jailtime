@@ -81,8 +81,14 @@
 	.settings main .columns {
 		flex-direction: row;
 	}
+	
 	.settings main nav {
 		width: 18.75rem;
+	}
+
+	.settings main nav ul li {
+		display: block;
+		padding-right: 0;
 	}
 
 	.settings main .main-content {
