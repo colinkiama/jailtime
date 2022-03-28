@@ -59,9 +59,13 @@
 	color: hsla(0, 0%, 10%, 1);
 }
 
-.settings main .main-content {
-	overflow-y: auto;
+.settings main section table {
+	width: 100%;
 }
+
+/*.settings main .main-content {
+	overflow-y: auto;
+}*/
 
 .settings footer {
 	padding-bottom: 2rem;
