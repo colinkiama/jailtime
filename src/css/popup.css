@@ -13,8 +13,9 @@
 }
 
 .popup > header button {
-	width: 1.5rem;
-	height: 1.5rem;
+	background: none;
+	border: none;
+	padding: 0;
 	flex: 0 0 1.5rem;
 }
 

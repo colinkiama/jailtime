@@ -152,8 +152,11 @@ button.secondary:disabled {
 	flex-direction: column;
 }
 
+
 svg.icon {
 	stroke: var(--foreground-color);
+	width: 1.5rem;
+	height: 1.5rem;
 }
 
 /* Dark theme styles */
