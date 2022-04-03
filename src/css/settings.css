@@ -101,6 +101,42 @@
 	width: 1.5rem;
 }
 
+/**
+ * You can't animate gradients so you need to gently fade a psuedoelement 	Source:  ;https://keithjgrant.com/posts/2017/07/transitioning-gradients/
+ * 
+ **/
+.settings button[data-action$="add"] {
+	position: relative;
+	background: var(--siren-red-gradient);
+	z-index: 1;
+}
+
+.settings button[data-action$="add"]::before {
+	position: absolute;
+	content: "";
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: var(--uniform-blue-gradient);
+	z-index: -1;
+	transition: opacity 0.5s ease-out;
+	opacity: 0;
+	border-radius: 1.5rem;
+}
+
+.settings button[data-action$="add"]:hover::before {
+	opacity: 1;
+}
+
+.settings button[data-action$="add"] svg.icon {
+	stroke: white;
+}
+
+.settings button[data-action$="add"] span {
+	margin-left: 0.5rem;
+}
+
 .settings button[data-action$="delete"] svg.icon {
 	stroke: var(--siren-red);
 }

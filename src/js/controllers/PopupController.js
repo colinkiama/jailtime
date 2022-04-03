@@ -46,7 +46,6 @@ export default class extends Controller {
 
 	_updateBlockButton() {
 		if (this.isBlocked) {
-
 			this.element.classList.add(this.blockedClass);
 			this.blockButtonTarget.disabled = true;
 			this.blockButtonTextTarget.textContent = "Blocked";

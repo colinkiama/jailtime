@@ -28,7 +28,12 @@
 					<h3>Enter url to add:</h3>
 					<div class="url-input-area">
 						<input type="text" autocomplete="url" data-blocklist-target="urlInput">
-						<button data-action="blocklist#add">Add Site</button>
+						<button class="primary" data-action="blocklist#add">
+							<svg class="icon">
+								<use href="/assets/icons/spritemap.svg#sprite-add"></use>
+							</svg>
+							<span>Add a new site</span>
+						</button>
 					</div>
 					<div data-blocklist-target="addSiteStatusMessage" class="status-message"></div>
 				</label>
