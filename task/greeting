@@ -1,3 +1,0 @@
-#!/bin/sh
-
-deno run ./scripts/hello.js

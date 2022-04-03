@@ -1,5 +1,0 @@
-#!/bin/sh
-
-./task/build 
-cd build
-deno run --allow-net --allow-read https://deno.land/std@0.127.0/http/file_server.ts

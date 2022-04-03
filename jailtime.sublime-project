@@ -6,14 +6,4 @@
 			"folder_exclude_patterns": ["build"]
 		}
 	],
-	"settings":
-	{
-		"LSP":
-		{
-			"Deno":
-			{
-				"enabled": true
-			}
-		}
-	},
 }
