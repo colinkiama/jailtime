@@ -44,6 +44,8 @@ async function loadBlocklistFromStorage() {
 	return [];
 }
 
+
+
 async function handleUpdated(tabId, changeInfo, tabInfo) {
 	let blocklist = await loadBlocklistFromStorage();
 	let updatedTabHostname = filterW3Prefix(getHostname(tabInfo.url));
@@ -52,8 +54,10 @@ async function handleUpdated(tabId, changeInfo, tabInfo) {
 
 	let isInBlockList = blocklist.indexOf(updatedTabHostname) > -1;
 	if (isInBlockList) {
-		chrome.tabs.update(tabId, {
-			url: chrome.runtime.getURL("views/site-blocked.html"),
+		let blockPageUrl = new URL(chrome.runtime.getURL("views/site-blocked.html"));
+		blockPageUrl.searchParams.append("site", updatedTabHostname);
+		await chrome.tabs.update(tabId, {
+			url: blockPageUrl.toString(),
 		});
 	}
 }

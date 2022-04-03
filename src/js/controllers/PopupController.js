@@ -1,7 +1,8 @@
 import { Controller } from "../vendor/stimulus.js";
 import { getHostname } from "../utils/urlHelper.js";
 import Blocklist from "../utils/blocklist.js";
-
+ 
+let BLOCK_PAGE_URL = new URL(chrome.runtime.getURL("views/site-blocked.html"));
 
 export default class extends Controller {
 	static targets = ["url", "status", "blockButton"]
@@ -13,6 +14,11 @@ export default class extends Controller {
 		if(tabQueryResult.length > 0) {
 			this.currentTab = tabQueryResult[0];
 			this.url = getHostname(this.currentTab.url);
+			if (this.url == getHostname(BLOCK_PAGE_URL)) {
+				this.url = new URL(this.currentTab.url).searchParams.get("site");
+			}
+
+			console.log("URL Value:", this.url);
 
 		} else {
 			this.url = getHostname("urlnotfound.error");
@@ -77,8 +83,10 @@ export default class extends Controller {
 		this._updateElements();
 
 		try {
+			let blockPageUrl = new URL(chrome.runtime.getURL("views/site-blocked.html"));
+			blockPageUrl.searchParams.append("site", getHostname(this.url));
 			await window.chrome.tabs.update(this.currentTab.id, {
-				url: window.chrome.runtime.getURL("views/site-blocked.html"),
+				url: blockPageUrl.toString(),
 			});
 		}
 		catch (err) {
