@@ -5,7 +5,7 @@ import Blocklist from "../utils/blocklist.js";
 let BLOCK_PAGE_URL = new URL(chrome.runtime.getURL("views/site-blocked.html"));
 
 export default class extends Controller {
-	static targets = ["url", "status", "blockButton"]
+	static targets = ["url", "status", "blockButton", "blockButtonText", "blockButtonIcon"]
 	static classes = ["blocked"];
 
 	async connect() {
@@ -47,10 +47,10 @@ export default class extends Controller {
 	_updateBlockButton() {
 		if (this.isBlocked) {
 
-			// this.blockButtonTarget.parentNode.removeChild(this.blockButtonTarget);
 			this.element.classList.add(this.blockedClass);
-			this.blockButtonTarget.textContent = "Blocked";
 			this.blockButtonTarget.disabled = true;
+			this.blockButtonTextTarget.textContent = "Blocked";
+			this.blockButtonIconTarget.setAttribute("href",  "/assets/icons/spritemap.svg#sprite-shield-check");
 		}
 	}
 
