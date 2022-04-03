@@ -27,6 +27,7 @@ export default class extends Controller {
 		**/ 
 		let urlCell = document.createElement("td");
 		urlCell.textContent = url;
+		urlCell.setAttribute("data-blocklist-item-target", "url");
 
 		let removeButton = document.createElement("button");
 		removeButton.textContent = "Remove";
@@ -48,7 +49,14 @@ export default class extends Controller {
 	}
 
 	deleteItem(args) {
-		console.log("Delete item args:", args);
+		console.log("Eleemnt to delete:", args.srcElement);
+		console.log("Delete item args:", args.detail);
+
+		let deletionIndex = this.list.indexOf(args.detail.url);
+		if (deletionIndex > -1) {
+			this.list.splice(deletionIndex);
+			this.listElementTarget.removeChild(args.srcElement);
+		}
 	}
 
 }
