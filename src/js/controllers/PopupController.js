@@ -17,9 +17,6 @@ export default class extends Controller {
 			if (this.url == getHostname(BLOCK_PAGE_URL)) {
 				this.url = new URL(this.currentTab.url).searchParams.get("site");
 			}
-
-			console.log("URL Value:", this.url);
-
 		} else {
 			this.url = getHostname("urlnotfound.error");
 		}
@@ -32,7 +29,6 @@ export default class extends Controller {
 		this.urlTarget.textContent = this.url;
 
 		this.isBlocked = await this.blocklist.contains(this.url);
-		console.log("Blocked classes:", this.blockedClass);
 		this._updateElements();
 		
 	}
@@ -58,7 +54,6 @@ export default class extends Controller {
 	}
 
 	navigateToSettings() {
-		console.log("Navigating to settings");
 		window.chrome.tabs.create({
 			active: true,
 			url: window.chrome.runtime.getURL("views/settings/blocklist.html")
@@ -69,7 +64,6 @@ export default class extends Controller {
 	}
 
 	async block(){
-		console.log("Block current site")
 		let addResult = await this.blocklist.add(this.url)
 
 		if (addResult.error) {
@@ -90,7 +84,7 @@ export default class extends Controller {
 			});
 		}
 		catch (err) {
-			console.log(err);
+			console.error(err);
 		}
 	}
 }

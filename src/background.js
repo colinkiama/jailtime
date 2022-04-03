@@ -7,7 +7,6 @@ chrome.runtime.onInstalled.addListener(() => {
   // Page actions are disabled by default and enabled on select tabs
   chrome.action.disable();
 
-  console.log("declarativeContent:", chrome);
   // Clear all rules to ensure only our expected rules are set
   chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
   	// Ensure that extenstion action is not active in chrome pages
@@ -71,8 +70,6 @@ async function loadBlocklistFromStorage() {
 async function handleUpdated(tabId, changeInfo, tabInfo) {
 	let blocklist = await loadBlocklistFromStorage();
 	let updatedTabHostname = filterW3Prefix(getHostname(tabInfo.url));
-	console.log("Updated tab host name:", updatedTabHostname);
-	console.log("Blocklist:", blocklist);	
 
 	let isInBlockList = blocklist.indexOf(updatedTabHostname) > -1;
 	if (isInBlockList) {
