@@ -16,6 +16,10 @@
 	--light-bg-color: hsla(0, 0%, 99%, 1);
 	--dark-bg-color: var(--murky-grey);
 
+	/* Base interaction palette */
+	--bg-hover-light: hsla(0, 0%, 80%, 1);
+	--bg-hover-dark: hsla(0, 0%, 40%, 1);
+
 	/* Gradient Colors */
 	--siren-red-gradient: linear-gradient(90deg, hsla(22, 82%, 47%, 1) 18%, hsla(360, 82%, 47%, 1) 82%);
 	--uniform-blue-gradient: linear-gradient(90deg, hsla(198, 61%, 42%, 1) 17%, hsla(230, 68%, 45%, 1) 82%);
@@ -31,7 +35,8 @@
 	--font-weight-bold: 700;
 
 	/* Base interaction colors */
-	--bg-hover: hsla(0, 0%, 80%, 1);
+	--bg-hover: var(--bg-hover-light);
+
 }
 
 html {
@@ -176,6 +181,7 @@ svg.icon {
 	:root {
 		--foreground-color: white;
 		--background-color: var(--dark-bg-color);
+		--bg-hover: var(--bg-hover-dark);
 	}
 
 	button.secondary {

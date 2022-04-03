@@ -141,3 +141,10 @@
 .popup[data-popup-view="block-duration"] .actions {
 	margin-top: 3rem;
 }
+
+@media (prefers-color-scheme: dark) {
+	.popup > header button:hover {
+		background-color: var(--bg-hover);
+		cursor: pointer;
+	}
+}
