@@ -26,10 +26,11 @@
 				</header>
 				<label class="add-site-area">
 					<h3>Enter url to add:</h3>
-					<div>
+					<div class="url-input-area">
 						<input type="text" autocomplete="url" data-blocklist-target="urlInput">
 						<button data-action="blocklist#add">Add Site</button>
 					</div>
+					<div data-blocklist-target="addSiteStatusMessage" class="status-message"></div>
 				</label>
 				<table>
 					<tbody data-blocklist-target="listElement">

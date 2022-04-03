@@ -69,7 +69,7 @@
 	margin-top: 2rem;
 }
 
-.settings .add-site-area div {
+.settings .url-input-area div {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -77,13 +77,17 @@
 	margin-top: 0.5rem;
 }
 
-.settings .add-site-area input[type="text"] {
+.settings .url-input-area input[type="text"] {
 	flex: 1 1 0%;
 	width: 100%;
 }
 
-.settings .add-site-area button {
+.settings .url-input-area button {
 	white-space: nowrap;
+	margin-top: 0.5rem;
+}
+
+.settings .add-site-area .status-message {
 	margin-top: 0.5rem;
 }
 
