@@ -88,13 +88,13 @@
 }
 	
 .settings .table-wrapper {
-	height: 40vh;
+	height: 50vh;
 	overflow-y: auto;
+	margin-top: 1rem;
 }
 .settings main section table {
 	width: 100%;
 	border-collapse: collapse;
-	margin-top: 1rem;
 }
 
 /* Update with to match "icon-only button" width when implemented. */
