@@ -22,7 +22,7 @@ export default class extends Controller {
 	}
 
 	createListElements() {
-		for (let i = this.list.length - 1; i >= 0; i--) {
+		for (let i = 0; i < this.list.length; i++) {
 			let url = this.list[i];
 			this.addItem(url);
 		}
