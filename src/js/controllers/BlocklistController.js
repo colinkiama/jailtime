@@ -30,15 +30,16 @@ export default class extends Controller {
 
 		let removeButton = document.createElement("button");
 		removeButton.textContent = "Remove";
+		removeButton.setAttribute("data-action", "blocklist-item#delete");
 
 		let actionsCell = document.createElement("td");
 		actionsCell.classList.add("actions");
 		actionsCell.appendChild(removeButton);
 
-		
 		let itemRow = document.createElement("tr");
 		itemRow.appendChild(urlCell);
 		itemRow.appendChild(actionsCell);
+		itemRow.setAttribute("data-controller", "blocklist-item");
 
 		this.listElementTarget.appendChild(itemRow);
 		console.log("Added list element:", url);
