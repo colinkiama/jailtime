@@ -24,9 +24,13 @@
 				<header>
 					<h2>Blocklist</h2>
 				</header>
-				<div class="list-controls">
-					<button data-action="blocklist#add">Add Site</button>
-				</div>
+				<label class="add-site-area">
+					<h3>Enter url to add:</h3>
+					<div>
+						<input type="text" autocomplete="url" data-blocklist-target="urlInput">
+						<button data-action="blocklist#add">Add Site</button>
+					</div>
+				</label>
 				<table>
 					<tbody data-blocklist-target="listElement">
 					</tbody>

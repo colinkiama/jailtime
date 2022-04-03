@@ -64,19 +64,27 @@
 	overflow-y: auto;
 }
 
-.settings .list-controls {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+.settings .add-site-area {
+	display: block;
 	margin-top: 2rem;
 }
 
-.settings .list-controls input[type="search"] {
+.settings .add-site-area div {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	max-width: 400px;
+	margin-top: 0.5rem;
+}
+
+.settings .add-site-area input[type="text"] {
+	flex: 1 1 0%;
 	width: 100%;
 }
 
-.settings .list-controls button {
-	margin-top: 1.5rem;
+.settings .add-site-area button {
+	white-space: nowrap;
+	margin-top: 0.5rem;
 }
 
 .settings main section table {
@@ -111,6 +119,23 @@
 	padding-top: 2rem;
 	padding-bottom: 2rem;
 	text-align: left;
+}
+
+@media (min-width: 700px) {
+	.settings .add-site-area div {
+		flex-direction: row;
+	}
+
+	.settings .add-site-area input[type="text"] {
+		flex: 1 1 0%;
+		width: 100%;
+	}
+
+	.settings .add-site-area button {
+		margin-top: 0;
+		margin-left: 0.5rem;
+		white-space: nowrap;
+	}
 }
 
 @media (min-width: 1000px) {
