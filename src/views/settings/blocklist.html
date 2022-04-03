@@ -20,7 +20,7 @@
 					<li><a href="#">Syncing (Coming soon)</a></li>
 				</ul>
 			</nav>			
-			<section class="main-content">
+			<section class="main-content" data-controller="blocklist">
 				<header>
 					<h2>Blocklist</h2>
 				</header>
@@ -29,8 +29,8 @@
 					<button>Add Site</button>
 				</div>
 				<table>
-					<tbody>
-						<tr>
+					<tbody data-blocklist-target="listElement">
+						<!-- <tr>
 							<td>yolomail.net</td>
 							<td class="actions"><button>Delete</button></td>
 						</tr>
@@ -49,7 +49,7 @@
 						<tr>
 							<td>yolomail.net</td>
 							<td class="actions"><button>Delete</button></td>
-						</tr>
+						</tr> -->
 					</tbody>
 				</table>
 			</section>
@@ -57,5 +57,6 @@
 
 	</main>
 	<footer>© Colin Kiama - 2022</footer>
+	<script src="/js/settings.js" type="module"></script>
 </body>
 </html>

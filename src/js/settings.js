@@ -1,5 +1,7 @@
 import { stimulusApp } from "./app.js";
 
-import BlockListController from "./controller/BlocklistController";
+import BlocklistController from "./controllers/BlocklistController.js";
 
-console.log("Settings modules")
+stimulusApp.register("blocklist", BlocklistController);
+
+console.log("Registered Stimulus Controllers");
