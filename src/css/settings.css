@@ -64,9 +64,25 @@
 	overflow-y: auto;
 }
 
+.settings .list-controls {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 2rem;
+}
+
+.settings .list-controls input[type="search"] {
+	width: 100%;
+}
+
+.settings .list-controls button {
+	margin-top: 1.5rem;
+}
+
 .settings main section table {
 	width: 100%;
 	border-collapse: collapse;
+	margin-top: 1rem;
 }
 
 /* Update with to match "icon-only button" width when implemented. */
