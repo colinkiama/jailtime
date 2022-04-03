@@ -7,7 +7,7 @@ export default class extends Controller {
 	static targets = ["url", "status", "blockButton"]
 
 	async connect() {
-		let tabQueryResult = await window.chrome.tabs.query({active: true});
+		let tabQueryResult = await window.chrome.tabs.query({active: true, currentWindow: true});
 
 		if(tabQueryResult.length > 0) {
 			this.currentTab = tabQueryResult[0];
