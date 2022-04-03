@@ -46,6 +46,11 @@ export default class extends Controller {
 				return;
 			}
 
+			if (addResult.alreadyInList) {
+				window.alert("This website already is in the blocklist");
+				return;
+			}
+
 			this.addItem(hostNameToAdd);
 				
 		}

@@ -37,13 +37,21 @@ async function loadBlocklistFromStorage() {
 	return [];
 }
 
+function checkIfInBlocklist(urls, list) {
+	for (let i = 0 ; i < urls.length; i++) {
+		if (list.indexOf(urls[i]) > -1) {
+			return true;
+		}
+	}	
+	return false;
+}
+
 async function handleUpdated(tabId, changeInfo, tabInfo) {
 	let blocklist = await loadBlocklistFromStorage();
 	let updatedTabHostname = getHostname(tabInfo.url);
 	console.log("Updated tab host name:", updatedTabHostname);
 
-	let isInBlockList = blocklist.indexOf(updatedTabHostname) > -1;
-
+	let isInBlockList = checkIfInBlocklist([updatedTabHostname, "www."+ updatedTabHostname], blocklist);
 	if (isInBlockList) {
 		chrome.tabs.update(tabId, {
 			url: chrome.runtime.getURL("views/site-blocked.html"),

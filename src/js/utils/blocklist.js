@@ -14,6 +14,8 @@ export default class {
 
 		if (this._listCache.indexOf(url) > -1) {
 			// URL is already in list
+			console.log("Already in list");
+			result.alreadyInList = true;
 			return result;
 		}
 		
@@ -36,7 +38,7 @@ export default class {
 		await this._fillCacheIfEmpty();
 		let result = {};
 		
-		let itemIndex = this._listCache.indexOf(url);
+		let itemIndex = this.contains(url);
 		
 		// URL isn't in list
 		if (itemIndex === -1) {
@@ -62,9 +64,14 @@ export default class {
 	async contains(url){
 		await this._fillCacheIfEmpty();
 
-		// An index of -1 means that the url isn't
-		// present in the block list at all.
-		return this._listCache.indexOf(url) > -1;
+		const urls = [url, "www." + url];
+		
+		for (let i = 0 ; i < urls.length; i++) {
+			if (this._listCache.indexOf(urls[i]) > -1) {
+				return true;
+			}
+		}	
+		return false;
 	}
 
 
