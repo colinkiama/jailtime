@@ -17,7 +17,6 @@ export default class extends Controller {
 		
 		this.list = listResult.value;
 
-		console.log(this.list);
 		this.createListElements();
 	}
 
@@ -89,14 +88,9 @@ export default class extends Controller {
 
 
 		this.listElementTarget.appendChild(itemRow);
-		console.log("Added list element:", url);
 	}
 
 	async deleteItem(args) {
-		console.log("Eleemnt to delete:", args.srcElement);
-		console.log("Delete item args:", args.detail);
-
-
 		let deletionResult = await this.blocklist.remove(args.detail.url);
 		if (deletionResult.error) {
 			console.error(deletionResult.error);

@@ -12,9 +12,9 @@ export default class {
 
 		let result = {};
 
-		if (this._listCache.indexOf(url) > -1) {
+		let isInBlockList = await this.contains(url);
+		if (isInBlockList) {
 			// URL is already in list
-			console.log("Already in list");
 			result.alreadyInList = true;
 			return result;
 		}
@@ -38,7 +38,7 @@ export default class {
 		await this._fillCacheIfEmpty();
 		let result = {};
 		
-		let itemIndex = this.contains(url);
+		let itemIndex = this._listCache.indexOf(url);
 		
 		// URL isn't in list
 		if (itemIndex === -1) {
@@ -64,14 +64,7 @@ export default class {
 	async contains(url){
 		await this._fillCacheIfEmpty();
 
-		const urls = [url, "www." + url];
-		
-		for (let i = 0 ; i < urls.length; i++) {
-			if (this._listCache.indexOf(urls[i]) > -1) {
-				return true;
-			}
-		}	
-		return false;
+		return this._listCache.indexOf(url) > -1;
 	}
 
 

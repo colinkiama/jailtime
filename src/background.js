@@ -22,9 +22,16 @@ function getHostname(urlString){
 	}
 }
 
+function filterW3Prefix(url) {
+	if (url.startsWith("www.")) {
+		return url.replace("www.", "");
+	}
+
+	return url;
+}
+
 async function loadBlocklistFromStorage() {
 	let loadedObject = await chrome.storage.sync.get(BLOCKLIST_KEY);
-	console.log("Loaded object:", loadedObject);
 	try {
 		// Check if value exists for key
 		if (loadedObject[BLOCKLIST_KEY]) {
@@ -37,21 +44,13 @@ async function loadBlocklistFromStorage() {
 	return [];
 }
 
-function checkIfInBlocklist(urls, list) {
-	for (let i = 0 ; i < urls.length; i++) {
-		if (list.indexOf(urls[i]) > -1) {
-			return true;
-		}
-	}	
-	return false;
-}
-
 async function handleUpdated(tabId, changeInfo, tabInfo) {
 	let blocklist = await loadBlocklistFromStorage();
-	let updatedTabHostname = getHostname(tabInfo.url);
+	let updatedTabHostname = filterW3Prefix(getHostname(tabInfo.url));
 	console.log("Updated tab host name:", updatedTabHostname);
+	console.log("Blocklist:", blocklist);	
 
-	let isInBlockList = checkIfInBlocklist([updatedTabHostname, "www."+ updatedTabHostname], blocklist);
+	let isInBlockList = blocklist.indexOf(updatedTabHostname) > -1;
 	if (isInBlockList) {
 		chrome.tabs.update(tabId, {
 			url: chrome.runtime.getURL("views/site-blocked.html"),

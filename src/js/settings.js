@@ -5,5 +5,3 @@ import BlocklistItemController from "./controllers/BlocklistItemController.js";
 
 stimulusApp.register("blocklist", BlocklistController);
 stimulusApp.register("blocklist-item", BlocklistItemController);
-
-console.log("Registered Stimulus Controllers");
