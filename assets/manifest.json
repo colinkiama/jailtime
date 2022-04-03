@@ -4,11 +4,11 @@
   "version": "1.0",
   "manifest_version": 3,
   "background": {
-    "service_worker": "js/background.js"
+    "service_worker": "background.js"
   },
   "action": {
     "default_popup": "views/popup.html"
   },
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
   "options_page": "views/settings/blocklist.html" 
 }
