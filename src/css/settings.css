@@ -95,6 +95,7 @@
 	width: 100%;
 	border-collapse: collapse;
 	margin-top: 1rem;
+	overflow-y: auto;
 }
 
 /* Update with to match "icon-only button" width when implemented. */

@@ -3,7 +3,7 @@ import { getHostname } from "../utils/urlHelper.js";
 import Blocklist from "../utils/blocklist.js";
 
 export default class extends Controller {
-	static targets = ["listElement"];
+	static targets = ["listElement", "urlInput", "addSiteStatusMessage"];
 
 	async connect() {
 		this.blocklist = new Blocklist();
@@ -28,13 +28,13 @@ export default class extends Controller {
 	}
 
 	async add() {
-		let url = window.prompt("Enter a url to block:");
+		let url = this.urlInputTarget.value;
 
 		try{
 			let hostNameToAdd = getHostname(url);
 			
 			if(!hostNameToAdd){
-				window.alert("You didn't enter a valid URL");
+				this.addSiteStatusMessageTarget.textContent = "You didn't enter a valid URL";
 				return;
 			}
 			
@@ -42,12 +42,18 @@ export default class extends Controller {
 
 			if (addResult.error){
 				console.error(addResult.error);
+				this.addSiteStatusMessageTarget.textContent = "Internal error" + 
+					" occured while adding site to blocklist";
 				return;
 			}
 
 			if (addResult.alreadyInList) {
-				window.alert("This website already is in the blocklist");
+				this.addSiteStatusMessageTarget.textContent = "This website already is in the blocklist";
 				return;
+			}
+
+			if (this.addSiteStatusMessageTarget.textContent.length > 0) {
+				this.addSiteStatusMessageTarget.textContent = "";
 			}
 
 			this.addItem(hostNameToAdd);
