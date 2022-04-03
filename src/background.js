@@ -3,8 +3,6 @@
 
 const BLOCKLIST_KEY = "blocklist";
 
-// Wrap in an onInstalled callback in order to avoid unnecessary work
-// every time the background script is run
 chrome.runtime.onInstalled.addListener(() => {
   // Page actions are disabled by default and enabled on select tabs
   chrome.action.disable();
@@ -12,7 +10,7 @@ chrome.runtime.onInstalled.addListener(() => {
   console.log("declarativeContent:", chrome);
   // Clear all rules to ensure only our expected rules are set
   chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
-    // Declare a rule to enable the action on example.com pages
+  	// Ensure that extenstion action is not active in chrome pages
     let activeFilterRule = {
       conditions: [
         new chrome.declarativeContent.PageStateMatcher({
