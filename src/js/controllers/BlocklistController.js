@@ -11,11 +11,11 @@ export default class extends Controller {
 	createlistElements() {
 		for (let i = this.list.length - 1; i >= 0; i--) {
 			let url = this.list[i];
-			this.addBlocklistItem(url);
+			this.addItem(url);
 		}
 	}
 
-	addBlocklistItem(url) {
+	addItem(url) {
 		/**
 		 * A blocklist item:
 		 * 
@@ -40,8 +40,15 @@ export default class extends Controller {
 		itemRow.appendChild(urlCell);
 		itemRow.appendChild(actionsCell);
 		itemRow.setAttribute("data-controller", "blocklist-item");
+		itemRow.setAttribute("data-action", "blocklist-item:delete->blocklist#deleteItem");
+
 
 		this.listElementTarget.appendChild(itemRow);
 		console.log("Added list element:", url);
 	}
+
+	deleteItem(args) {
+		console.log("Delete item args:", args);
+	}
+
 }

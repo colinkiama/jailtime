@@ -8,7 +8,7 @@ export default class extends Controller {
 		console.log("Here is my url:", this.urlValue);
 	}
 
-	async delete() {
-		console.log("Delete triggered");
+	delete() {
+		this.dispatch("delete", { detail: { url: this.urlValue } });
 	}
 }
