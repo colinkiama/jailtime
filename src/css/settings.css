@@ -60,10 +60,6 @@
 	color: hsla(0, 0%, 10%, 1);
 }
 
-.settings main .main-content {
-	overflow-y: auto;
-}
-
 .settings .add-site-area {
 	display: block;
 	margin-top: 2rem;
@@ -90,12 +86,15 @@
 .settings .add-site-area .status-message {
 	margin-top: 0.5rem;
 }
-
+	
+.settings .table-wrapper {
+	height: 40vh;
+	overflow-y: auto;
+}
 .settings main section table {
 	width: 100%;
 	border-collapse: collapse;
 	margin-top: 1rem;
-	overflow-y: auto;
 }
 
 /* Update with to match "icon-only button" width when implemented. */
