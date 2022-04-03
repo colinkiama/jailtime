@@ -69,7 +69,7 @@
 	margin-top: 2rem;
 }
 
-.settings .url-input-area div {
+.settings .url-input-area {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
