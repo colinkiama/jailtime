@@ -9,4 +9,6 @@
   "action": {
     "default_popup": "views/popup.html"
   },
-  "permissions": ["storage"] }
+  "permissions": ["storage"],
+  "options_page": "views/settings/blocklist.html" 
+}
