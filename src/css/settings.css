@@ -97,9 +97,12 @@
 	border-collapse: collapse;
 }
 
-/* Update with to match "icon-only button" width when implemented. */
 .settings table .actions {
-	width: 4rem;
+	width: 1.5rem;
+}
+
+.settings button[data-action$="delete"] svg.icon {
+	stroke: var(--siren-red);
 }
 
 .settings table td {
@@ -194,5 +197,9 @@
 
 	.settings main nav a:active {
 		color: hsla(0, 0%, 89%, 1)
+	}
+
+	.settings button[data-action$="delete"] svg.icon {
+		stroke: var(--siren-red-in-dark);
 	}
 }

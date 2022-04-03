@@ -86,8 +86,11 @@ export default class extends Controller {
 		svgElement.appendChild(deleteIconUseElement);
 
 		let removeButton = document.createElement("button");
+		removeButton.classList.add("tertiary");
 		removeButton.setAttribute("data-action", "blocklist-item#delete");
+
 		// You need to flush the innerHTML to get the `<use>` tag to load icons
+		// Source: https://stackoverflow.com/questions/27751928/force-redraw-of-svg-when-using-use-for-svg-data
 		removeButton.innerHTML = "";
 		removeButton.innerHTML = svgElement.outerHTML;
 
@@ -103,7 +106,6 @@ export default class extends Controller {
 
 
 		this.listElementTarget.appendChild(itemRow);
-		removeButton.appendChild(svgElement);
 	}
 
 	async deleteItem(args) {
