@@ -61,6 +61,7 @@
 	font-size: 1.25rem;
 	font-variation-settings: 'wght' var(--font-weight-medium);
 	width: 100%;
+	text-align: center;
 }
 
 .popup .actions {
@@ -77,6 +78,10 @@
 	padding-left: 2rem;
 	padding-right: 2rem;
 	padding-bottom: 3rem;
+}
+
+.popup.blocked .block-button {
+	background-color: var(--inactive-siren-red);
 }
 
 .popup[data-popup-view="block"] main {

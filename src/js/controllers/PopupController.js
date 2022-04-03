@@ -5,6 +5,7 @@ import Blocklist from "../utils/blocklist.js";
 
 export default class extends Controller {
 	static targets = ["url", "status", "blockButton"]
+	static classes = ["blocked"];
 
 	async connect() {
 		let tabQueryResult = await window.chrome.tabs.query({active: true, currentWindow: true});
@@ -24,7 +25,8 @@ export default class extends Controller {
 		
 		this.urlTarget.textContent = this.url;
 
-		this.isBlocked = await this.blocklist.contains(this.url)
+		this.isBlocked = await this.blocklist.contains(this.url);
+		console.log("Blocked classes:", this.blockedClass);
 		this._updateElements();
 		
 	}
@@ -36,7 +38,11 @@ export default class extends Controller {
 
 	_updateBlockButton() {
 		if (this.isBlocked) {
-			this.blockButtonTarget.parentNode.removeChild(this.blockButtonTarget);
+
+			// this.blockButtonTarget.parentNode.removeChild(this.blockButtonTarget);
+			this.element.classList.add(this.blockedClass);
+			this.blockButtonTarget.textContent = "Blocked";
+			this.blockButtonTarget.disabled = true;
 		}
 	}
 
