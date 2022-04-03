@@ -29,6 +29,9 @@
 	--font-weight-regular: 400;
 	--font-weight-medium: 500;
 	--font-weight-bold: 700;
+
+	/* Base interaction colors */
+	--bg-hover: hsla(0, 0%, 80%, 1);
 }
 
 html {
@@ -63,6 +66,15 @@ ul {
 	list-style: none;
 	padding-left: 0;
 }
+
+button:hover {
+	cursor: pointer;
+}
+
+button[disabled] {
+	cursor: auto;
+}
+
 /* Components */
 button.primary,
 button.secondary {

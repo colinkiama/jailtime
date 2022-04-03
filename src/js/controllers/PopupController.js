@@ -17,20 +17,26 @@ export default class extends Controller {
 			if (this.url == getHostname(BLOCK_PAGE_URL)) {
 				this.url = new URL(this.currentTab.url).searchParams.get("site");
 			}
-		} else {
-			this.url = getHostname("urlnotfound.error");
-		}
-		this.blocklist = new Blocklist();
+		} 
 		
 		if (!this.url) {
+			this._showNoUrlState();
 			return;
 		}
 		
 		this.urlTarget.textContent = this.url;
 
+		this.blocklist = new Blocklist();
+
 		this.isBlocked = await this.blocklist.contains(this.url);
 		this._updateElements();
 		
+	}
+
+	_showNoUrlState() {
+		this.blockButtonTarget.disabled = true;
+		this.urlTarget.textContent = "Not available for this page";
+		this.statusTarget.textContent = "";
 	}
 
 	_updateElements() {

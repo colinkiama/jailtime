@@ -13,10 +13,20 @@
 }
 
 .popup > header button {
+	transition: background 0.3s ease-out;
 	background: none;
+	padding: 0.25rem;
 	border: none;
-	padding: 0;
 	flex: 0 0 1.5rem;
+	border-radius: 100%;
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.popup > header button:hover {
+	background-color: var(--bg-hover);
+	cursor: pointer;
 }
 
 .popup > header span {
