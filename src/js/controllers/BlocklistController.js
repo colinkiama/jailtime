@@ -78,12 +78,21 @@ export default class extends Controller {
 		urlCell.textContent = url;
 		urlCell.setAttribute("data-blocklist-item-target", "url");
 
+		let deleteIconUseElement = document.createElement("use");
+		deleteIconUseElement.setAttribute("href", "/assets/icons/spritemap.svg#sprite-delete");
+		
+		let svgElement = document.createElement("svg");
+		svgElement.classList.add("icon");
+		svgElement.appendChild(deleteIconUseElement);
+
 		let removeButton = document.createElement("button");
-		removeButton.textContent = "Remove";
 		removeButton.setAttribute("data-action", "blocklist-item#delete");
+		// You need to flush the innerHTML to get the `<use>` tag to load icons
+		removeButton.innerHTML = "";
+		removeButton.innerHTML = svgElement.outerHTML;
 
 		let actionsCell = document.createElement("td");
-		actionsCell.classList.add("actions");
+		actionsCell.classList.add("actions");		
 		actionsCell.appendChild(removeButton);
 
 		let itemRow = document.createElement("tr");
@@ -94,6 +103,7 @@ export default class extends Controller {
 
 
 		this.listElementTarget.appendChild(itemRow);
+		removeButton.appendChild(svgElement);
 	}
 
 	async deleteItem(args) {
