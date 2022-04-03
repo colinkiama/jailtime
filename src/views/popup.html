@@ -7,16 +7,16 @@
 	<link rel="stylesheet" href="/css/global.css">
 	<link rel="stylesheet" href="/css/popup.css">
 </head>
-<body class="popup">
+<body class="popup" data-controller="popup">
 	<header>
-		<button data-popup-action="settings" class="icon-button">c</button>
+		<button data-action="popup#navigateToSettings" class="icon-button">c</button>
 	</header>
 	<main>
 		<span class="logo">jailtime logo</span>
 
 		<div class="site-info">
-			<span class="site-name">yolomail.net</span>
-			<div class="block-status not-blocked">
+			<span data-popup-target="url" class="site-name">yolomail.net</span>
+			<div data-popup-target="status" class="block-status not-blocked">
 				<span class="indicator"></span>
 				Not Blocked
 			</div>
@@ -26,10 +26,11 @@
 		</div>
 
 		<div class="actions">
-			<button class="primary" data-popup-action="block">
+			<button class="primary" data-popup-target="blockButton" data-action="popup#block">
 				Block
 			</button>
 		</div>
 	</main>
+	<script src="/js/popup.js" type="module"></script>
 </body>
 </html>
