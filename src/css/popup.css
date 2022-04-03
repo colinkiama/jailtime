@@ -12,23 +12,6 @@
 	color: white;
 }
 
-/*.popup > header button {
-	transition: background 0.3s ease-out;
-	background: none;
-	padding: 0.25rem;
-	border: none;
-	flex: 0 0 1.5rem;
-	border-radius: 100%;
-	display: inline-flex;
-	justify-content: center;
-	text-align: center;
-}
-
-.popup > header button:hover {
-	background-color: var(--bg-hover);
-	cursor: pointer;
-}*/
-
 .popup > header span {
 	text-align: center;
 	flex: 1 1 0%;
@@ -91,9 +74,18 @@
 	padding-bottom: 3rem;
 }
 
+.popup .block-button svg.icon {
+	stroke: white;
+}
+
+.popup .block-button span {
+	margin-left: 0.5rem;
+}
+
 .popup.blocked .block-button {
 	background-color: var(--inactive-siren-red);
 }
+
 
 .popup[data-popup-view="block"] main {
 	padding-top: 3rem;
