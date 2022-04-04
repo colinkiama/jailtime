@@ -10,5 +10,11 @@
     "default_popup": "views/popup.html"
   },
   "permissions": ["storage", "tabs", "declarativeContent"],
-  "options_page": "views/settings/blocklist.html" 
+  "options_page": "views/settings/blocklist.html",
+  "icons":  {
+    "16": "/images/jailtime-16.png",
+    "32": "/images/jailtime-32.png",
+    "48": "/images/jailtime-48.png",
+    "128": "/images/jailtime-128.png"
+  }
 }
