@@ -125,4 +125,14 @@ export default class extends Controller {
 		this.listElementTarget.removeChild(args.srcElement);
 	}
 
+	async handleKeyPress(event) {
+		switch(event.code) {
+			case "Enter":
+				await this.add();
+				break;
+			default:
+				break;
+		}
+	}
+
 }

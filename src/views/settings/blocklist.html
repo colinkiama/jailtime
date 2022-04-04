@@ -45,7 +45,8 @@
 				<label class="add-site-area">
 					<h3>Enter a URL to add (e.g. facebook.com):</h3>
 					<div class="url-input-area">
-						<input type="text" autocomplete="url" data-blocklist-target="urlInput">
+						<input type="text" autocomplete="url" data-blocklist-target="urlInput"
+						data-action="keyup->blocklist#handleKeyPress">
 						<button class="primary" data-action="blocklist#add">
 							<svg class="icon">
 								<use href="/assets/icons/spritemap.svg#sprite-add"></use>
