@@ -1,0 +1,54 @@
+@keyframes siren-animation {
+	0% {
+		color: var(--siren-red);
+	}
+
+	100% {
+		color: var(--uniform-blue);
+	}
+}
+
+body {
+	background-color: black;
+	color: white;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.blocked-text {
+	animation-name: siren-animation;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+	animation-direction: alternate;
+	color: var(--siren-red);
+	font-size: 3.75rem;
+	font-variation-settings: 'wght' var(--font-weight-bold);
+}
+
+button {
+	margin-top: 1rem;
+}
+
+
+footer {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	text-align: left;
+	position: fixed;
+	bottom: 0;
+	padding-left: 2rem;
+}
+
+@media (min-width: 1000px) {
+	footer {
+		padding-left: 8.75rem;
+		padding-right: 8.75rem;
+	}
+}
