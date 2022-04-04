@@ -69,12 +69,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	max-width: 400px;
 	margin-top: 0.5rem;
 }
 
 .settings .url-input-area input[type="text"] {
 	flex: 1 1 0%;
+	max-width: 400px;
 	width: 100%;
 }
 
@@ -109,6 +109,7 @@
 	position: relative;
 	background: var(--siren-red-gradient);
 	z-index: 1;
+	border: none;
 }
 
 .settings button[data-action$="add"]::before {
@@ -169,14 +170,9 @@
 		flex-direction: row;
 	}
 
-	.settings .add-site-area input[type="text"] {
-		flex: 1 1 0%;
-		width: 100%;
-	}
-
 	.settings .add-site-area button {
 		margin-top: 0;
-		margin-left: 0.5rem;
+		margin-left: 1rem;
 		white-space: nowrap;
 	}
 }
@@ -210,6 +206,27 @@
 		width: 55%;
 	}
 
+	.settings .add-site-area div {
+		flex-direction: column;
+	}
+
+	.settings .add-site-area button {
+		margin-top: 0.5rem;
+		margin-left: 0rem;
+	}
+
+}
+
+@media (min-width: 1200px) {
+	.settings .add-site-area div {
+		flex-direction: row;
+	}
+
+	.settings .add-site-area button {
+		margin-top: 0;
+		margin-left: 1rem;
+		white-space: nowrap;
+	}
 }
 
 @media (min-width: 1640px) {

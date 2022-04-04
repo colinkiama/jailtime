@@ -152,6 +152,15 @@ button.tertiary:hover {
 	background-color: var(--bg-hover);
 }
 
+input[type="text"] {
+  padding: 0.75rem 1rem;
+  border-radius: 1rem;
+  outline: none;
+  border: solid 2px var(--dirty-grey);
+  font-size: inherit;
+}
+
+
 .indicator {
 	width: 1rem;
 	height: 1rem;
