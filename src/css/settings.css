@@ -201,6 +201,12 @@
 	.settings main nav ul li {
 		display: block;
 		padding-right: 0;
+		font-size: 1.25rem;
+		margin-top: 1rem;
+	}
+
+	.settings main nav ul li:first-child {
+		margin-top: 0;
 	}
 
 	.settings main .main-content {
@@ -233,7 +239,8 @@
 
 @media (min-width: 1640px) {
 	.settings main {
-		padding: 0;	
+		padding-left: 0;	
+		padding-right: 0;	
 	}
 
 }
