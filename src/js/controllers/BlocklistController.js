@@ -57,6 +57,7 @@ export default class extends Controller {
 			}
 
 			this.addItem(hostNameToAdd);
+			this.urlInputTarget.value = "";
 				
 		}
 		catch (err) {

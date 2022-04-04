@@ -76,11 +76,13 @@
 	flex: 1 1 0%;
 	max-width: 400px;
 	width: 100%;
+	background-color: transparent;
+	color: var(--foreground-color);
 }
 
 .settings .url-input-area button {
 	white-space: nowrap;
-	margin-top: 0.5rem;
+	margin-top: 1rem;
 }
 
 .settings .add-site-area .status-message {
@@ -211,7 +213,7 @@
 	}
 
 	.settings .add-site-area button {
-		margin-top: 0.5rem;
+		margin-top: 1rem;
 		margin-left: 0rem;
 	}
 
