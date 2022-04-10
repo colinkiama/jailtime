@@ -72,7 +72,7 @@ export default class {
 		let result = await this._fillCacheIfEmpty();
 		
 		if(!result.err){
-			result.value = this._listCache;
+			result.value = [...this._listCache];
 		}
 
 		return result;
