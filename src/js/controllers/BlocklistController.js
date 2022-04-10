@@ -16,8 +16,6 @@ export default class extends Controller {
 		}
 		
 		this.list = listResult.value;
-		console.log("List:", this.list);
-
 		this.createListElements();
 	}
 
@@ -120,15 +118,11 @@ export default class extends Controller {
 		}
 
 		let deletionIndex = this.list.indexOf(args.detail.url);
-		console.log("URL:", args.detail.url);
-		console.log("Index:", deletionIndex);
 
 		if (deletionIndex > -1) {
 			this.list.splice(deletionIndex, 1);
 			this.listElementTarget.removeChild(args.srcElement);
 		}
-
-		console.log("List after deletion attempt:", this.list);
 	}
 
 	async handleKeyPress(event) {
