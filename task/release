@@ -1,0 +1,8 @@
+#!/bin/sh
+
+EXTENSION_ASSETS_DIR=./assets
+
+./task/build
+
+cd ./build
+zip -r jailtime .
