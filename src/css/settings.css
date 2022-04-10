@@ -3,17 +3,12 @@
 	--max-grid-width: 1640px;
 	display: flex;
 	flex-direction: column;
-	padding-top: 4rem;
 }
 
-.settings > header,
 .settings main {
+	margin-top: 4rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
-
-}
-
-.settings main {
 	transition: padding 0.5s ease-out;
 	flex: 1 1 0%;
 	margin-left: auto;
@@ -200,7 +195,7 @@
 	}
 
 	.settings main {
-		padding-top: 6.25rem;
+		margin-top: 6.25rem;
 	}
 
 	.settings main .columns {
