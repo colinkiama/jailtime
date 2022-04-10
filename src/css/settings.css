@@ -7,8 +7,7 @@
 }
 
 .settings > header,
-.settings main,
-.settings footer {
+.settings main {
 	padding-left: 2rem;
 	padding-right: 2rem;
 
@@ -166,9 +165,19 @@
 }
 
 .settings footer {
+	margin-right: auto;
+	margin-left: auto;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	text-align: left;
+}
+
+.settings footer a {
+	transition: color 0.3s ease-out;
+	color: var(--foreground-color);
+}
+
+.settings footer a:hover {
+	color: var(--dirty-grey);
 }
 
 @media (min-width: 700px) {
@@ -184,8 +193,7 @@
 }
 
 @media (min-width: 1000px) {
-	.settings main,
-	.settings footer {
+	.settings main {
 		padding-left: 8.75rem;
 		padding-right: 8.75rem;
 	}
@@ -241,7 +249,7 @@
 	}
 }
 
-@media (min-width: 1640px) {
+@media (min-width: 1920px) {
 	.settings main {
 		padding-left: 0;	
 		padding-right: 0;	
@@ -267,5 +275,9 @@
 
 	.settings button[data-action$="delete"] svg.icon {
 		stroke: var(--siren-red-in-dark);
+	}
+
+	.settings footer a:hover {
+		color: var(--foggy-grey);
 	}
 }
