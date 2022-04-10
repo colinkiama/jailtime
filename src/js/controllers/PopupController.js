@@ -2,14 +2,14 @@ import { Controller } from "../vendor/stimulus.js";
 import { getHostname } from "../utils/urlHelper.js";
 import Blocklist from "../utils/blocklist.js";
  
-let BLOCK_PAGE_URL = new URL(chrome.runtime.getURL("views/site-blocked.html"));
+let BLOCK_PAGE_URL = new URL(browser.runtime.getURL("views/site-blocked.html"));
 
 export default class extends Controller {
 	static targets = ["url", "status", "blockButton", "blockButtonText", "blockButtonIcon"]
 	static classes = ["blocked"];
 
 	async connect() {
-		let tabQueryResult = await window.chrome.tabs.query({active: true, currentWindow: true});
+		let tabQueryResult = await window.browser.tabs.query({active: true, currentWindow: true});
 
 		if(tabQueryResult.length > 0) {
 			this.currentTab = tabQueryResult[0];
@@ -59,9 +59,9 @@ export default class extends Controller {
 	}
 
 	navigateToSettings() {
-		window.chrome.tabs.create({
+		window.browser.tabs.create({
 			active: true,
-			url: window.chrome.runtime.getURL("views/settings/blocklist.html")
+			url: window.browser.runtime.getURL("views/settings/blocklist.html")
 		});
 
 		// Close Popup
@@ -82,9 +82,9 @@ export default class extends Controller {
 		this._updateElements();
 
 		try {
-			let blockPageUrl = new URL(chrome.runtime.getURL("views/site-blocked.html"));
+			let blockPageUrl = new URL(browser.runtime.getURL("views/site-blocked.html"));
 			blockPageUrl.searchParams.append("site", getHostname(this.url));
-			await window.chrome.tabs.update(this.currentTab.id, {
+			await window.browser.tabs.update(this.currentTab.id, {
 				url: blockPageUrl.toString(),
 			});
 		}

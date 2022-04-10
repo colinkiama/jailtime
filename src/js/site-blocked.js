@@ -1,8 +1,8 @@
 let editBlockListButton = document.querySelector("button");
 
 editBlockListButton.addEventListener('click', (event) => {
-	window.chrome.tabs.create({
+	window.browser.tabs.create({
 		active: true,
-		url: chrome.runtime.getURL("views/settings/blocklist.html")
+		url: browser.runtime.getURL("views/settings/blocklist.html")
 	});
 });

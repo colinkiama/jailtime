@@ -16,6 +16,7 @@ export default class extends Controller {
 		}
 		
 		this.list = listResult.value;
+
 		this.createListElements();
 	}
 

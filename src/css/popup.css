@@ -2,6 +2,8 @@
 	min-height: unset;
 	width: 380px;
 	height: 440px;
+	overflow-x: hidden;
+	overflow-y: hidden;
 }
 
 .popup > header {

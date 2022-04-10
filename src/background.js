@@ -3,29 +3,29 @@
 
 const BLOCKLIST_KEY = "blocklist";
 
-chrome.runtime.onInstalled.addListener(() => {
+browser.runtime.onInstalled.addListener(() => {
   // Page actions are disabled by default and enabled on select tabs
-  chrome.action.disable();
+  browser.action.disable();
 
   // Clear all rules to ensure only our expected rules are set
-  chrome.declarativeContent.onPageChanged.removeRules(undefined, () => {
+  browser.declarativeContent.onPageChanged.removeRules(undefined, () => {
   	// Ensure that extenstion action is not active in chrome pages
     let activeFilterRule = {
       conditions: [
-        new chrome.declarativeContent.PageStateMatcher({
+        new browser.declarativeContent.PageStateMatcher({
           pageUrl: { schemes: ["http", "https", "chrome-extension"] },
         })
       ],
-      actions: [new chrome.declarativeContent.ShowAction()],
+      actions: [new browser.declarativeContent.ShowAction()],
     };
 
     // Finally, apply our new array of rules
     let rules = [activeFilterRule];
-    chrome.declarativeContent.onPageChanged.addRules(rules);
+    browser.declarativeContent.onPageChanged.addRules(rules);
   });
 });
 
-chrome.tabs.onUpdated.addListener(handleUpdated);
+browser.tabs.onUpdated.addListener(handleUpdated);
 
 function getHostname(urlString){
 	try {
@@ -53,7 +53,7 @@ function filterW3Prefix(url) {
 }
 
 async function loadBlocklistFromStorage() {
-	let loadedObject = await chrome.storage.sync.get(BLOCKLIST_KEY);
+	let loadedObject = await browser.storage.sync.get(BLOCKLIST_KEY);
 	try {
 		// Check if value exists for key
 		if (loadedObject[BLOCKLIST_KEY]) {
@@ -73,9 +73,9 @@ async function handleUpdated(tabId, changeInfo, tabInfo) {
 
 	let isInBlockList = blocklist.indexOf(updatedTabHostname) > -1;
 	if (isInBlockList) {
-		let blockPageUrl = new URL(chrome.runtime.getURL("views/site-blocked.html"));
+		let blockPageUrl = new URL(browser.runtime.getURL("views/site-blocked.html"));
 		blockPageUrl.searchParams.append("site", updatedTabHostname);
-		await chrome.tabs.update(tabId, {
+		await browser.tabs.update(tabId, {
 			url: blockPageUrl.toString(),
 		});
 	}
