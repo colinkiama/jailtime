@@ -62,7 +62,11 @@
 
 .settings .add-site-area {
 	display: block;
-	margin-top: 2rem;
+	margin-top: 1rem;
+}
+
+.settings .add-site-area p {
+	margin-top: 0;
 }
 
 .settings .url-input-area {
