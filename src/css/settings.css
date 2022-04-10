@@ -6,10 +6,12 @@
 }
 
 .settings main {
+	transition-property: margin padding;
+	transition-duration: 0.5s;
+	transition-timing-function: ease-out;
 	margin-top: 4rem;
 	padding-left: 2rem;
 	padding-right: 2rem;
-	transition: padding 0.5s ease-out;
 	flex: 1 1 0%;
 	margin-left: auto;
 	margin-right: auto;
