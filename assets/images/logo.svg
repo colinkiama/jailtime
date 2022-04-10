@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="16" height="16" version="1.1" viewBox="0 0 4.2333 4.2333" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient21312" x1="1.9708" x2="4.0468" y1="2.2428" y2="1.5747" gradientTransform="matrix(.99685 0 0 .99985 -.0030104 .0051535)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#db5e16" offset="0"/>
+   <stop stop-color="#db1616" offset="1"/>
+  </linearGradient>
+ </defs>
+ <path x="5.3776428e-17" y="0" width="4.2491851" height="4.2491851" d="m1 0h2.2492a1 1 45 0 1 1 1v2.2492a1 1 135 0 1-1 1h-2.2492a1 1 45 0 1-1-1v-2.2492a1 1 135 0 1 1-1z" fill="url(#linearGradient21312)" fill-rule="evenodd" stroke-width=".26326"/>
+ <text x="1.106559" y="3.413125" fill="#ffffff" font-family="'Readex Pro'" font-size="3.175px" stroke-width=".26458" style="line-height:1.25" xml:space="preserve"><tspan x="1.106559" y="3.413125" fill="#ffffff" font-family="'Readex Pro'" font-size="3.175px" stroke-width=".26458">J</tspan></text>
+ <rect x=".52917" y=".67598" width=".26458" height="3.0627" fill="#fff" stroke-width=".23689"/>
+ <rect x="3.4396" y=".67598" width=".26458" height="3.0627" fill="#fff" stroke-width=".23689"/>
+</svg>
