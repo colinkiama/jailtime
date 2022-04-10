@@ -46,6 +46,15 @@ footer {
 	padding-left: 2rem;
 }
 
+footer a {
+	transition: color 0.3s ease-out;
+	color: white;
+}
+
+footer a:hover {
+	color: var(--dirty-grey);
+}
+
 @media (min-width: 1000px) {
 	footer {
 		padding-left: 8.75rem;
