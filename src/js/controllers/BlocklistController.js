@@ -86,18 +86,19 @@ export default class extends Controller {
 		svgElement.classList.add("icon");
 		svgElement.appendChild(deleteIconUseElement);
 
-		let removeButton = document.createElement("button");
-		removeButton.classList.add("tertiary");
-		removeButton.setAttribute("data-action", "blocklist-item#delete");
+		let deleteButton = document.createElement("button");
+		deleteButton.classList.add("tertiary");
+		deleteButton.setAttribute("data-action", "blocklist-item#delete");
+		deleteButton.setAttribute("title", "Delete");
 
 		// You need to flush the innerHTML to get the `<use>` tag to load icons
 		// Source: https://stackoverflow.com/questions/27751928/force-redraw-of-svg-when-using-use-for-svg-data
-		removeButton.innerHTML = "";
-		removeButton.innerHTML = svgElement.outerHTML;
+		deleteButton.innerHTML = "";
+		deleteButton.innerHTML = svgElement.outerHTML;
 
 		let actionsCell = document.createElement("td");
 		actionsCell.classList.add("actions");		
-		actionsCell.appendChild(removeButton);
+		actionsCell.appendChild(deleteButton);
 
 		let itemRow = document.createElement("tr");
 		itemRow.appendChild(urlCell);
