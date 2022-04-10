@@ -13,6 +13,15 @@ body {
 	color: white;
 }
 
+header {
+	transition: padding 0.5s ease-out;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding-top: 2rem;
+	padding-left: 2rem;
+}
+
 main {
 	display: flex;
 	flex-direction: column;
@@ -36,14 +45,14 @@ button {
 	margin-top: 1rem;
 }
 
-
 footer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	text-align: center;	
+	bottom: 0;
 	padding-top: 2rem;
 	padding-bottom: 2rem;
-	text-align: left;
-	position: fixed;
-	bottom: 0;
-	padding-left: 2rem;
 }
 
 footer a {
@@ -56,8 +65,8 @@ footer a:hover {
 }
 
 @media (min-width: 1000px) {
-	footer {
-		padding-left: 8.75rem;
-		padding-right: 8.75rem;
+	header {
+		padding-top: 4rem;
+		padding-left: 4rem;
 	}
 }
