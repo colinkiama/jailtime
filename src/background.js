@@ -1,29 +1,4 @@
-// TODO: Have different versions of this file for each browser
-// you are targeting.
-
 const BLOCKLIST_KEY = "blocklist";
-
-browser.runtime.onInstalled.addListener(() => {
-  // Page actions are disabled by default and enabled on select tabs
-  browser.action.disable();
-
-  // Clear all rules to ensure only our expected rules are set
-  browser.declarativeContent.onPageChanged.removeRules(undefined, () => {
-  	// Ensure that extenstion action is not active in chrome pages
-    let activeFilterRule = {
-      conditions: [
-        new browser.declarativeContent.PageStateMatcher({
-          pageUrl: { schemes: ["http", "https", "chrome-extension"] },
-        })
-      ],
-      actions: [new browser.declarativeContent.ShowAction()],
-    };
-
-    // Finally, apply our new array of rules
-    let rules = [activeFilterRule];
-    browser.declarativeContent.onPageChanged.addRules(rules);
-  });
-});
 
 browser.tabs.onUpdated.addListener(handleUpdated);
 
@@ -65,7 +40,6 @@ async function loadBlocklistFromStorage() {
 
 	return [];
 }
-
 
 async function handleUpdated(tabId, changeInfo, tabInfo) {
 	let blocklist = await loadBlocklistFromStorage();
