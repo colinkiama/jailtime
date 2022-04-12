@@ -90,12 +90,9 @@
 	margin-top: 0.5rem;
 }
 	
-.settings .table-wrapper {
-	height: 50vh;
-	overflow-y: auto;
-	margin-top: 1rem;
-}
+
 .settings main section table {
+	margin-top: 1rem;
 	width: 100%;
 	border-collapse: collapse;
 }
