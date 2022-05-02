@@ -22,6 +22,6 @@ These scripts are shell scripts (`sh`) however, some of the commands may not be 
 
 ## TODO
 
-- [ ] Adding items to blocklist
-- [ ] Removing items from blocklist
+- [X] Adding items to blocklist
+- [X] Removing items from blocklist
 - [ ] Blocklist search
